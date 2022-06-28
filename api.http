@@ -1,0 +1,26 @@
+##CREATE
+POST http://localhost:3333/perifericosSP
+Content-Type: application/json
+
+{
+  "data": "string",
+  "marca": "string",
+  "modelo": "string",
+  "patrimonio": 1
+}
+
+###findall
+
+GET http://localhost:3333/usersSP
+
+###UPDATE
+
+PUT http://localhost:3333/notebooks/14
+Content-Type: application/json
+
+{
+  "userId": 15
+  }
+
+###DELETE
+DELETE http://localhost:3333/users/5
