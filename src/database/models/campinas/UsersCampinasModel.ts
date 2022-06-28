@@ -9,5 +9,5 @@ export const UsersCampinasModel = db.define("usersCampinas", {
   departament: {
     type: DataTypes.STRING,
     allowNull: false,
-  }
+  },
 });

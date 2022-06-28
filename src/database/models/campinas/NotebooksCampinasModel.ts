@@ -1,8 +1,8 @@
-import { DataTypes } from 'sequelize';
-import {db} from '../../db';
-import { UsersCampinasModel } from './UsersCampinasModel';
+import { DataTypes } from "sequelize";
+import { db } from "../../db";
+import { UsersCampinasModel } from "./UsersCampinasModel";
 
-export const NotebooksCampinasModel = db.define('notebooksCampinas', {
+export const NotebooksCampinasModel = db.define("notebooksCampinas", {
   data: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -15,7 +15,7 @@ export const NotebooksCampinasModel = db.define('notebooksCampinas', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  mac: { 
+  mac: {
     type: DataTypes.STRING,
     allowNull: false,
   },
@@ -26,9 +26,8 @@ export const NotebooksCampinasModel = db.define('notebooksCampinas', {
   patrimonio: {
     type: DataTypes.INTEGER,
     allowNull: false,
-  }
+  },
 });
-
 
 UsersCampinasModel.hasMany(NotebooksCampinasModel);
 NotebooksCampinasModel.belongsTo(UsersCampinasModel);
