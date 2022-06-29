@@ -57,8 +57,6 @@ router.put("/usersCampinas/:id", UsersCampinasController.update);
 
 router.delete("/usersCampinas/:id", UsersCampinasController.delete);
 
-router.get("/login", function (req, res, next) {
-  res.render("login");
-});
+router.get("/login", function (req, res, next) {});
 
 export { router };
