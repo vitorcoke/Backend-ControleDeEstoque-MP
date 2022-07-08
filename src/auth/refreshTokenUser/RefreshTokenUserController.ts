@@ -43,6 +43,8 @@ export const RefreshTokenUserController = async (
       ValidationRefreshToken.userId
     );
 
+    user.password = undefined;
+
     return res.status(200).json({ token, NewRefreshToken, user });
   }
 

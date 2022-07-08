@@ -19,6 +19,8 @@ export const validationUser = async (req: Request, res: Response) => {
   if (user && isValidPassword) {
     const token = await GenerateTokenProvide(user.id);
 
+    await prisma.refreshToken.deleteMany({ where: { userId: user.id } });
+
     const RefreshToken = await GenerateRefreshTokenProvider(user.id);
 
     user.password = undefined;

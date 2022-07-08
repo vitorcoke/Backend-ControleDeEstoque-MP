@@ -16,13 +16,10 @@ import { RefreshTokenUserController } from "./auth/refreshTokenUser/RefreshToken
 const router = express.Router();
 
 router.get("/register", AuthValidationToken, getUsersRegister);
-router.get("/register/:id", getByIdUseregister);
-router.post("/register", createUserRegister);
-router.put("/register/:id", updateUserRegister);
-router.delete("/register/:id", deleteUserRegister);
+router.get("/register/:id", AuthValidationToken, getByIdUseregister);
+router.post("/register", AuthValidationToken, createUserRegister);
+router.put("/register/:id", AuthValidationToken, updateUserRegister);
+router.delete("/register/:id", AuthValidationToken, deleteUserRegister);
 router.post("/login", validationUser);
 router.post("/refresh-token", RefreshTokenUserController);
-router.get("/curso", AuthValidationToken, (req: CustomRequest, res) => {
-  res.send({ message: "Token valido", user: req.user });
-});
 export { router };

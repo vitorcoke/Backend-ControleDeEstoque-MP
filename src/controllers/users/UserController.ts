@@ -5,7 +5,13 @@ import bcrypt from "bcryptjs";
 const prisma = new PrismaClient();
 
 export const getUsersRegister = async (req: Request, res: Response) => {
-  const users = await prisma.user.findMany();
+  const users = await prisma.user.findMany({
+    select: {
+      id: true,
+      username: true,
+      email: true,
+    },
+  });
 
   users.length > 0 ? res.status(200).json(users) : res.status(204).json({});
 };
