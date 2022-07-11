@@ -17,9 +17,10 @@ const router = express.Router();
 
 router.get("/register", AuthValidationToken, getUsersRegister);
 router.get("/register/:id", AuthValidationToken, getByIdUseregister);
-router.post("/register", AuthValidationToken, createUserRegister);
+router.post("/register", createUserRegister);
 router.put("/register/:id", AuthValidationToken, updateUserRegister);
 router.delete("/register/:id", AuthValidationToken, deleteUserRegister);
 router.post("/login", validationUser);
 router.post("/refresh-token", RefreshTokenUserController);
+router.get("/bytoken", AuthValidationToken);
 export { router };

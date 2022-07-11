@@ -38,6 +38,8 @@ export const AuthValidationToken = (
     user.password = undefined;
 
     req.user = user;
+
+    res.json(user);
     return next();
   });
 };
